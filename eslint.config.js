@@ -7,7 +7,7 @@ module.exports = defineConfig([
   {
     settings: {
       'import/resolver': {
-        'babel-module': {},
+        typescript: {},
       },
     },
     ignores: ['dist/*'],
