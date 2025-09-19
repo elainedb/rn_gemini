@@ -1,37 +1,17 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 import { ExternalLink } from './external-link';
-import { openBrowserAsync, WebBrowserPresentationStyle } from 'expo-web-browser';
+import { WebBrowserPresentationStyle } from 'expo-web-browser';
 
 // Mock expo-web-browser
+import { Link as MockLink } from 'expo-router';
+
 jest.mock('expo-web-browser', () => ({
   openBrowserAsync: jest.fn(),
   WebBrowserPresentationStyle: {
     AUTOMATIC: 'automatic',
   },
 }));
-
-jest.mock('expo-router', () => ({
-  Link: jest.fn(({ children, onPress, href, ...props }) => {
-    const handlePress = (event: any) => {
-      if (onPress) onPress(event);
-    };
-
-    return (
-      <button
-        testID="external-link"
-        onClick={handlePress}
-        data-href={href}
-        {...props}
-      >
-        {children}
-      </button>
-    );
-  }),
-}));
-
-const mockOpenBrowserAsync = openBrowserAsync as jest.MockedFunction<typeof openBrowserAsync>;
-const { Link: MockLink } = require('expo-router');
 
 describe('ExternalLink', () => {
   beforeEach(() => {
