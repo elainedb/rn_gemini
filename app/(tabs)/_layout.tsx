@@ -30,9 +30,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="empty"
+        name="main"
         options={{
-          href: null,
+          title: 'Main',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="video.fill" color={color} />,
         }}
       />
       

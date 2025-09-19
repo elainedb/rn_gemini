@@ -25,7 +25,7 @@ export default function LoginScreen() {
 
       if (authorizedEmails.includes(userEmail)) {
         console.log(`Access granted to ${userEmail}`);
-        router.replace('/(tabs)/empty');
+        router.replace('/(tabs)/main');
       } else {
         setError("Access denied. Your email is not authorized.");
         await GoogleSignin.signOut();
