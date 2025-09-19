@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import { ExternalLink } from './external-link';
+import { Link as MockLink } from 'expo-router';
 import { openBrowserAsync, WebBrowserPresentationStyle } from 'expo-web-browser';
 
 // Mock expo-web-browser
 const mockOpenBrowserAsync = openBrowserAsync as jest.MockedFunction<typeof openBrowserAsync>;
-const { Link: MockLink } = require('expo-router');
 
 jest.mock('expo-web-browser', () => ({
   openBrowserAsync: jest.fn(),
