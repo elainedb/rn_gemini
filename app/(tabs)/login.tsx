@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import { router } from 'expo-router';
 
-import { AUTHORIZED_EMAILS } from '@env';
+import { AUTHORIZED_EMAILS } from '@/config.js';
 
 const authorizedEmails = AUTHORIZED_EMAILS.split(',');
 

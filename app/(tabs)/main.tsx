@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import axios from 'axios';
-import { youtubeApiKey } from 'config.js';
+import { youtubeApiKey } from '@/config.js';
 
 const channelIds = [
   'UCynoa1DjwnvHAowA_jiMEAQ',

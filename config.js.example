@@ -1,0 +1,2 @@
+export const youtubeApiKey = "YOUR_YOUTUBE_API_KEY";
+export const AUTHORIZED_EMAILS = "user1@example.com,user2@example.com";

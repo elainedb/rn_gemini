@@ -21,6 +21,11 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
+      - name: Create dummy config.js for CI
+        run: |
+          echo "export const youtubeApiKey = 'DUMMY_API_KEY';" > config.js
+          echo "export const AUTHORIZED_EMAILS = 'dummy@example.com';" >> config.js
+
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
