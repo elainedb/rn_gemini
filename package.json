@@ -61,5 +61,8 @@
     "ts-jest": "^29.4.1",
     "typescript": "~5.9.2"
   },
-  "private": true
+  "private": true,
+  "resolutions": {
+    "@react-navigation/bottom-tabs": "^7.4.0"
+  }
 }

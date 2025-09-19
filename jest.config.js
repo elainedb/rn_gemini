@@ -10,7 +10,7 @@ module.exports = {
     '^.+\\.(js|jsx)$': 'babel-jest'
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(react-native|react-native-web|@react-native|expo|@expo|@react-navigation|@testing-library|@expo/vector-icons)/)'
+    "node_modules/(?!(@react-native|react-native|expo-router|@expo/vector-icons|react-native-vector-icons|expo-font|react-native-gesture-handler|@react-navigation/.*)/)"
   ],
   testMatch: [
     '**/__tests__/**/*.(ts|tsx|js)',

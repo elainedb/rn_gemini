@@ -21,11 +21,11 @@ export default function LoginScreen() {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      const userEmail = userInfo.data.user.email;
+      const userEmail = userInfo.data?.user?.email;
 
-      if (authorizedEmails.includes(userEmail)) {
+      if (userEmail && authorizedEmails.includes(userEmail)) {
         console.log(`Access granted to ${userEmail}`);
-        router.replace('/(tabs)/main');
+        router.replace({ pathname: '/(tabs)/main' as any });
       } else {
         setError("Access denied. Your email is not authorized.");
         await GoogleSignin.signOut();

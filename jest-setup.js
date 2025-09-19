@@ -55,6 +55,14 @@ jest.mock('@expo/vector-icons', () => ({
   MaterialIcons: 'MaterialIcons',
 }));
 
+jest.mock('expo-router', () => ({
+  Link: jest.fn(),
+  Redirect: 'Redirect',
+  router: {
+    replace: jest.fn(),
+  },
+}));
+
 jest.mock('react-native-gesture-handler', () => {
   const View = 'View';
   return {
