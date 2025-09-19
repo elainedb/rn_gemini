@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import { ExternalLink } from './external-link';
-import { Link as MockLink } from 'expo-router';
+const { Link: MockLink } = require('expo-router');
 import { openBrowserAsync, WebBrowserPresentationStyle } from 'expo-web-browser';
 
 // Mock expo-web-browser
@@ -17,6 +17,7 @@ jest.mock('expo-web-browser', () => ({
 describe('ExternalLink', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    MockLink.mockClear();
   });
 
   describe('rendering', () => {

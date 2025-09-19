@@ -1,3 +1,1 @@
-declare module '../../config.js' {
-  export const youtubeApiKey: string;
-}
+declare module 'config.js';
