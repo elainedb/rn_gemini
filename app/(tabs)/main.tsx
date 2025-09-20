@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import React, { useEffect, useState, useMemo } from 'react';
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Linking, Button, Modal, SafeAreaView } from 'react-native';
 import axios from 'axios';
@@ -35,6 +36,7 @@ function chunkArray<T>(array: T[], size: number): T[][] {
 }
 
 const MainScreen = () => {
+  const router = useRouter();
   const [videos, setVideos] = useState<Video[]>([]);
   const [channelMap, setChannelMap] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(true);
@@ -201,6 +203,7 @@ const MainScreen = () => {
         <Button title="Refresh" onPress={handleRefresh} />
         <Button title="Filter" onPress={() => setFilterModalVisible(true)} />
         <Button title="Sort" onPress={() => setSortModalVisible(true)} />
+        <Button title="View Map" onPress={() => router.push('/map')} />
       </View>
 
       <View style={styles.listHeader}>
